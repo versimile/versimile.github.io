@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>dioxus | ⛺</title>
+  <title>versimile</title>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8" />
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/main.css">
+
 </head>
 <body>
   <div id="main"></div>
   <script type="module">
-    import init from "/./assets/dioxus/name.js";
-    init("/./assets/dioxus/name_bg.wasm").then(wasm => {
+    import init from "/./assets/dioxus/versimile.js";
+    init("/./assets/dioxus/versimile_bg.wasm").then(wasm => {
       if (wasm.__wbindgen_start == undefined) {
         wasm.main();
       }
     });
   </script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<script src="./js/main.js"></script>
+
 </body>
 </html>

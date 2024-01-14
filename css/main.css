@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
+
+:root {
+  /* so far, Montserrat seems the nicest, but the question is the support for various languages */
+  --font-family: 'Montserrat', sans-serif;
+  --font-size: 1rem;
+  /* --font-family: 'Open Sans', sans-serif; */
+  /* --font-family: 'Libersina'; */
+  --emphasis-color: gold;
+  --link-color: whitesmoke;
+}
+
+/* I like the grayscale approach taken by https://github.com/maxence-charriere so "stealing" his styling */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  /* To offset the bottom navbar */
+  padding-bottom: 1rem;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* The two below hide the scrollbars on Firefox and IE */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: silver;
+
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.08);
+  /* scrollbar-width: none; */
+  background: linear-gradient(#2e343a, #1c1d1f);
+}
+
+/* Hide the scrollbar on Chrome, Edge, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* TODO: Temporary for a bit of spacing. Surely can be done better. */
+.navbar-brand {
+  padding-left: 1rem;
+}
+
+/* TODO: Temporary for a bit of spacing. Surely can be done better. */
+.navbar-nav .nav-item {
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
+
+#versimile-app-frame {
+  width: 100%;
+  height: 100%;
+}
+
+#author-view-body {
+  padding-top: 1rem;
+  /* To offset the bottom navbar */
+  padding-bottom: 3rem;
+}
+
+#versimile-content-main {
+  /* 10px margin-top to prevent content from sticking to the top of the screen */
+  /* margin-top: 10px; */
+  /* 85px margin-bottom to ensure no content will be hidden behind the navbar */
+  /* margin-bottom: 85px; */
+  padding-top: 0.5rem;
+  width: 100%;
+  height: 100%;
+  /* width: calc(100% - 10px);
+  height: calc(100% - 85px); */
+}
+
+.versimile-tei-iframe {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.highlighted,
+.active {
+  color: var(--emphasis-color);
+}
+
+.lg {
+  margin-top: 0.5em;
+}
+
+.poem {
+  position: relative;
+  margin: 0 0 0 4rem;
+}
+
+.poem span[n]::before {
+  left: -4rem;
+  width: 4rem;
+  direction: rtl;
+  position: absolute;
+  content: "[" attr(n) "]";
+  color: rgba(192, 192, 192, 0.306);
+  /* enable tabular numbers; essentially monospace */
+  font-feature-settings: 'tnum';
+}
+
+.badge {
+  /* enable tabular numbers; essentially monospace */
+  font-feature-settings: 'tnum';
+  font-size: 1.1rem;
+}
+
+#authors-list {
+  font-size: 1.1rem;
+}
+
+.poem h1 {
+  font-variant: small-caps;
+}
+
+span.l {
+  display: inline-block;
+}
+
+.p {
+  margin-top: 0.5rem;
+  text-indent: 4ch;
+  text-align: justify;
+}
+
+/* Not exactly yet sure why, but retain this for side-by-side display. */
+.text-column {
+  flex: 1 1;
+}
